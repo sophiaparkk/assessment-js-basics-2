@@ -35,8 +35,13 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce(function(arr, curr){
+    for (let i=0; i<cart.length; i++)
+    return cart[i].price + cart[i].price + cart[i].price
 
+})
+
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,6 +59,13 @@ const cart = [
 */
 
 //CODE HERE
+
+const calcFinalPrice = function(cartTotal, couponValue, tax) {
+    let taxedTotal = (cartTotal * tax) + cartTotal
+    return taxedTotal - couponValue
+}
+
+console.log(calcFinalPrice(summedPrice, 3, .06))
 
 
 
@@ -79,7 +91,14 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    A cart page would need information from a customer such as:
+    Name: String
+    Address: String
+    Card payment last 4: Number
+    Shipping type: String
 
+    I chose these properties as they are some basic information needed to ship items purchased online. Also only reduced card payment to the last 4 digits for simplicity of this example.
+    The data types are the types that make most sense for the properties I've chosen.
 */
 
 /*
@@ -88,3 +107,10 @@ const cart = [
 */
 
 //CODE HERE
+
+let customer = {
+    name: 'John Doe',
+    address: '123 Rainbow way',
+    cardpayment: 1234,
+    shipping: 'Standard'
+}

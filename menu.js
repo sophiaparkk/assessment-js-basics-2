@@ -32,6 +32,14 @@
 
 //CODE HERE
 
+let pizza = {
+    name: 'Truffle',
+    price: 1,
+    category: 'White sauce',
+    popularity: 1,
+    rating: 10,
+    tags: ['amazing', 'strong flavor', 'smelly']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -44,6 +52,8 @@
 
 //CODE HERE
 
+console.log(pizza.popularity)
+
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +64,7 @@
 
 //CODE HERE
 
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -64,6 +75,8 @@
 
 //CODE HERE
 
+let {price: newPrice} = pizza
+console.log(newPrice)
 
 /*
     Fourth, and last, destructure the category
@@ -73,6 +86,9 @@
 */
 
 //CODE HERE
+
+let {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -89,6 +105,43 @@
 
 //CODE HERE
 
+let foodArr = [
+    {name: 'Grapes',
+    price: 3,
+    category: 'Fruit',
+    popularity: 3,
+    rating: 8,
+    tags: ['green', 'healthy', 'sweet']
+    },
+    {name: 'Neopolitan',
+    price: 3.99,
+    category: 'Ice Cream',
+    popularity: 10,
+    rating: 6,
+    tags: ['frozen', 'dessert', 'sweet']
+    },
+    {name: 'Avocado',
+    price: 0.99,
+    category: 'Produce',
+    popularity: 2,
+    rating: 9,
+    tags: ['raw', 'healthy', 'organic']
+    },
+    {name: 'Brownies',
+    price: 3.25,
+    category: 'Baked goods',
+    popularity: 7,
+    rating: 6.5,
+    tags: ['bakery', 'dessert', 'sweet']
+    },
+    {name: 'Chobani',
+    price: 1.25,
+    category: 'Yogurt',
+    popularity: 12,
+    rating: 7,
+    tags: ['dairy', 'probiotic', 'refrigerated']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,7 +158,15 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(function(element){
+    // for (let i=0; i<foodArr.length; i++) {
+        if (element.tags.includes('sweet')) {
+        return element
+        }
+    // }
+})
+
+console.log(filteredFood)
 
 
 
@@ -149,6 +210,41 @@
 */
 
 //CODE HERE
+console.log("Problem 5")
+let filterByProperty = function(property, number, type) {
+    let foodArrProperty = foodArr.filter(function(element){
+        if (property = foodArr.property){
+            console.log(property)
+        }
+
+
+
+
+        // if (type = 'above') {
+        // //     for (i=0; i<foodArr.length; i++) {
+        //         if (property = 'rating' && element.rating > number)
+        //         return element
+        //         else if (property = 'popularity' && element.popularity > number)
+        //         return element
+        //         else if (property = 'price' && element.price > number)
+        //         return element
+        //         else return false
+        // }
+        // else if (type = 'below')
+        //     for (i=0; i<foodArr.length; i++) {
+        //         if (property = 'rating' && element.rating < number)
+        //         return element
+        //         else if (property = 'popularity' && element.popularity < number)
+        //         return element
+        //         else if (property = 'price' && element.price < number)
+        //         return element
+        // }
+    })
+    return foodArrProperty
+}
+
+
+
 
 
 /*
@@ -159,3 +255,5 @@
 */
 
 //CODE HERE
+
+console.log(filterByProperty('popularity', 6, 'above'))

@@ -85,7 +85,7 @@ console.log(canWeDeliver(123))
 let canWeDeliverTwo = function(zipCode) {
     if (deliveryAreaZipCodes.includes(zipCode)){
         return 'We are able to deliver to you, yay!'
-    } else return 'We are not able to deliver to this area code'
+    }   else return 'We are not able to deliver to this area code'
 }
 
 console.log(canWeDeliverTwo(85203))
